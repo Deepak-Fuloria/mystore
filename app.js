@@ -21,7 +21,7 @@ app.get("*", (req, res) => {
   console.log("reached h",path.join(__dirname, "../client/build/index.html"))
 });
 
-app.use(express.static("public/profileImages"));
+// app.use(express.static("public/profileImages"));
 app.use(cors());
 
 app.use(cookieParser());
