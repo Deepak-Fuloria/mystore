@@ -8,7 +8,7 @@ const {
 
 const productsRouter = express.Router();
 
-productsRouter.get("/products", getAllProducts);
+productsRouter.get("/fetchAllproducts", getAllProducts);
 productsRouter.get("/singleProduct/:id", getSingleProduct);
 // productsRouter.get("/test", test);
 
