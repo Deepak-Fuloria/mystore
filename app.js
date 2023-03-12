@@ -16,10 +16,10 @@ app.use(express.json());
 // app.use(express.static(path.join(__dirname, "../client/build")));
  app.use(express.static(path.join(__dirname,"./client/build")))
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-//   console.log("reached h",path.join(__dirname, "../client/build/index.html"))
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  console.log("reached h",path.join(__dirname, "../client/build/index.html"))
+});
 
 app.use(express.static("public/profileImages"));
 app.use(cors());
