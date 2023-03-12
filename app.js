@@ -7,7 +7,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const app = express();
-
+const env = require("dotenv").config();
 connect();
 
 // --------------------------------------------
@@ -30,6 +30,8 @@ app.use("/", userRouter);
 DefaultData();
 
 //  ---------------------------------------------
-app.listen(5000, () => {
-  console.log("app is running at port no 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`app is runing on ${PORT}`);
 });
