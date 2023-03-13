@@ -201,9 +201,10 @@ const profileImage = async (req, res, next) => {
   form.parse(req, async (err, fields, files) => {
     var oldpath = files.myfile.filepath;
     const newPath =
-      path.join(__dirname, "../client/build/media/") +
+      path.join(__dirname, "../client/build/") +
       files.myfile.newFilename +
       files.myfile.originalFilename;
+      console.log("🚀 ~ file: userController.js:204 ~ form.parse ~ newPath:", newPath)
     fs.rename(oldpath, newPath, function (err) {
       if (err) throw err;
       filesname = files.myfile.newFilename + files.myfile.originalFilename;
@@ -221,6 +222,7 @@ const getUser = async (req, res) => {
   res.status(200).json(user);
 };
 module.exports = {
+
   register,
   login,
   logout,
