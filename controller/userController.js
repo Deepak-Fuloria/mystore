@@ -201,7 +201,7 @@ const profileImage = async (req, res, next) => {
   form.parse(req, async (err, fields, files) => {
     var oldpath = files.myfile.filepath;
     const newPath =
-      path.join(__dirname, "../Public/profileImages/") +
+      path.join(__dirname, "../client/build/media/") +
       files.myfile.newFilename +
       files.myfile.originalFilename;
     fs.rename(oldpath, newPath, function (err) {
